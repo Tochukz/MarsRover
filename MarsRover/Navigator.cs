@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace MarsRover
 {
-	class Navigator
+	public class Navigator
 	{
 		int[] UpperRightCoord = new int[2];
 		Dictionary<char, int> Directions = new Dictionary<char, int>
@@ -113,15 +113,20 @@ namespace MarsRover
 			}
 		}
 
-		public void PrintPosition()
+		public string GetPosition()
 		{
 			char[] keys = Directions.Keys.ToArray();
 			char d = keys[rover.Direction - 1];
-			Console.WriteLine($"{rover.X} {rover.Y} {d}");
+			return $"{rover.X} {rover.Y} {d}";
+		}
+
+		public void PrintPosition()
+		{
+			Console.WriteLine(GetPosition());
 		}
 	}
 
-	class Rover
+	public class Rover
 	{
 		public int X;
 
