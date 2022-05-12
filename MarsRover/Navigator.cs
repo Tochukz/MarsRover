@@ -6,8 +6,9 @@ namespace MarsRover
 {
 	public class Navigator
 	{
-		int[] UpperRightCoord = new int[2];
-		Dictionary<char, int> Directions = new Dictionary<char, int>
+		private readonly int[] UpperRightCoord = new int[2];
+
+		private readonly Dictionary<char, int> Directions = new Dictionary<char, int>
 		{
 			{'W', 1 },
 			{'N', 2 },
@@ -15,7 +16,7 @@ namespace MarsRover
 			{'S', 4 }
 		};
 
-		Rover rover;
+		private Rover rover;
 
 		public void SetUpperRight(int x, int y)
 		{
